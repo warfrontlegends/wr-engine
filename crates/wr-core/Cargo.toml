@@ -1,0 +1,31 @@
+[package]
+name         = "wr-core"
+description  = "Canonical types for Warfront Legends battle simulation. Determinism-first: no floats, fixed-point math, stable serialization."
+version      .workspace = true
+edition      .workspace = true
+license      .workspace = true
+repository   .workspace = true
+homepage     .workspace = true
+authors      .workspace = true
+rust-version .workspace = true
+keywords     = ["warfront", "game", "deterministic", "simulation"]
+categories   = ["games", "data-structures"]
+
+[lints.rust]
+unsafe_code = "forbid"
+
+[lints.clippy]
+float_arithmetic = "deny"
+float_cmp        = "deny"
+
+[dependencies]
+serde       = { workspace = true }
+serde_bytes = { workspace = true }
+fixed       = { workspace = true }
+blake3      = { workspace = true }
+bincode     = { workspace = true }
+thiserror   = { workspace = true }
+
+[dev-dependencies]
+blake3.workspace = true
+proptest = { workspace = true }
